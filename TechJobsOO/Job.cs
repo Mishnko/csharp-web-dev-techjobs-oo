@@ -38,5 +38,21 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
+
+        public override string ToString()
+        {
+            if (Value == "")
+            {
+                EmployerName.Value = "Data not found";
+            }
+                return " " +
+                "\nID: " + Id +
+                "\nName: " + Name +
+                "\nEmployer: " + EmployerName +
+                "\nLocation: " + EmployerLocation +
+                "\nPosition Type: " + JobType +
+                "\nCore Competency: " + JobCoreCompetency;
+        }
+        //TODO: make sure it returns "Data not available" if theres no data
     }
 }

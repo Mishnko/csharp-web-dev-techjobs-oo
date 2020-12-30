@@ -40,9 +40,14 @@ namespace TechJobsTests
             Job new_job = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             Job new_job2 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
             Assert.IsFalse(new_job.Equals(new_job2));
+            Assert.IsFalse(new_job.Id.Equals(new_job2.Id));
         }
         [TestMethod]
-        public void
+        public void TestToString()
+        {
+            Job job1 = new Job("Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+            Assert.AreEqual(" ", job1.ToString());
+        }
 
     }
 }

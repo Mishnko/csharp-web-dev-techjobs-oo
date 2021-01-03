@@ -5,7 +5,6 @@ namespace TechJobsOO
     {
         public int Id { get; }
         private static int nextId = 1;
-
         public string Name { get; set; }
         public Employer EmployerName { get; set; }
         public Location EmployerLocation { get; set; }

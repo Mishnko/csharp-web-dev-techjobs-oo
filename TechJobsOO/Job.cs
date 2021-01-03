@@ -38,21 +38,45 @@ namespace TechJobsOO
         {
             return HashCode.Combine(Id);
         }
-
         public override string ToString()
         {
-            if (Value == "")
+            string tempName = this.Name;
+            string tempEmployer = EmployerName.Value;
+            string tempEmployerLocation = EmployerLocation.Value;
+            string tempJobType = JobType.Value;
+            string tempJobCoreCompetency = JobCoreCompetency.Value;
+
+            if (tempName == "" && tempEmployer == "" && tempEmployerLocation == "" && tempJobType == "" && tempJobCoreCompetency == "")
             {
-                EmployerName.Value = "Data not found";
+                return "OOPS! This job does not seem to exist.";
             }
-                return " " +
+            if (this.Name == "")
+            {
+                tempName = "Data not available";
+            }
+            if (EmployerName.Value == "")
+            {
+                tempEmployer = "Data not available";
+            }
+            if (EmployerLocation.Value == "")
+            {
+                tempEmployerLocation = "Data not available";
+            }
+            if (JobType.Value == "")
+            {
+                tempJobType = "Data not available";
+            }
+            if (tempJobCoreCompetency == "")
+            {
+                tempJobCoreCompetency = "Data not available";
+            }
+            return "" +
                 "\nID: " + Id +
-                "\nName: " + Name +
-                "\nEmployer: " + EmployerName +
-                "\nLocation: " + EmployerLocation +
-                "\nPosition Type: " + JobType +
-                "\nCore Competency: " + JobCoreCompetency;
+                "\nName: " + tempName +
+                "\nEmployer: " + tempEmployer +
+                "\nLocation: " + tempEmployerLocation +
+                "\nPosition Type: " + tempJobType +
+                "\nCore Competency: " + tempJobCoreCompetency + "\n";
         }
-        //TODO: make sure it returns "Data not available" if theres no data
     }
 }

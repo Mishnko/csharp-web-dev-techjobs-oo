@@ -17,7 +17,7 @@ namespace TechJobsOO
         }
         public JobField(string value): this()
         {
-            Value = Value;
+            Value = value;
         }
 
 
